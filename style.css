@@ -1,0 +1,103 @@
+:root{
+  --ink:#1B2A4A;
+  --paper:#F6F2E8;
+  --paper-deep:#EFE9DA;
+  --gold:#A8843C;
+  --text:#2B2B28;
+  --text-soft:#5C5A52;
+  --serif:'Alegreya', Georgia, serif;
+  --sans:'Source Sans 3', system-ui, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.65;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--ink)}
+
+/* ---------- language switching ---------- */
+[lang-block]{display:none}
+html[data-lang="uk"] [lang-block="uk"],
+html[data-lang="ru"] [lang-block="ru"],
+html[data-lang="nl"] [lang-block="nl"]{display:block}
+span[lang-block]{display:none}
+html[data-lang="uk"] span[lang-block="uk"],
+html[data-lang="ru"] span[lang-block="ru"],
+html[data-lang="nl"] span[lang-block="nl"]{display:inline}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff}
+.header-inner{max-width:1040px;margin:0 auto;padding:.65rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:var(--serif);font-size:1.05rem;letter-spacing:.02em;color:#fff;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lang-switch{display:flex;gap:.25rem;flex-shrink:0}
+.lang-switch button{font-family:var(--sans);font-size:.85rem;font-weight:600;letter-spacing:.05em;background:transparent;color:#C9CFDD;border:1px solid transparent;border-radius:4px;padding:.3rem .6rem;cursor:pointer}
+.lang-switch button[aria-pressed="true"]{color:#fff;border-color:var(--gold)}
+.lang-switch button:hover{color:#fff}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:#fff;text-align:center;padding:4.5rem 1.25rem 5rem}
+.hero .rule{width:72px;height:1px;background:var(--gold);margin:0 auto}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,4vw,2.4rem);margin:1.6rem auto .9rem;max-width:22ch;line-height:1.25}
+.hero .sub{color:#C9CFDD;font-size:1.05rem;max-width:46ch;margin:0 auto}
+.verse{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,3vw,1.5rem);line-height:1.5;max-width:34ch;margin:2.6rem auto 0}
+.verse-ref{display:block;font-style:normal;font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:1rem;font-family:var(--sans);font-weight:600}
+.hero .cta{display:inline-block;margin-top:2.8rem;font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--ink);background:#fff;text-decoration:none;padding:.8rem 1.9rem;border-radius:4px}
+.hero .cta:hover{background:var(--paper)}
+
+/* ---------- sections ---------- */
+section{padding:4rem 1.25rem}
+.inner{max-width:760px;margin:0 auto}
+.wide{max-width:1040px;margin:0 auto}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-align:center}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3.5vw,2rem);text-align:center;color:var(--ink);margin:.5rem 0 2.2rem}
+section p{margin-bottom:1rem}
+.alt{background:var(--paper-deep)}
+
+/* ---------- photo placeholders ---------- */
+.ph{background:repeating-linear-gradient(45deg,#E4DECE,#E4DECE 12px,#EDE7D8 12px,#EDE7D8 24px);border:1px dashed var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--text-soft);font-size:.9rem;text-align:center;padding:1rem}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:2rem}
+.photo-grid .ph{aspect-ratio:4/3}
+
+/* ---------- first time ---------- */
+.faq{display:grid;gap:0;border-top:1px solid #DDD5C2}
+.faq-item{border-bottom:1px solid #DDD5C2;padding:1.4rem 0}
+.faq-item h3{font-family:var(--serif);font-weight:500;font-size:1.2rem;color:var(--ink);margin-bottom:.5rem}
+.faq-item p{margin:0;color:var(--text-soft)}
+
+/* ---------- schedule ---------- */
+.sched{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:.5rem}
+.sched-card{background:var(--paper);border:1px solid #DDD5C2;border-radius:6px;padding:1.4rem;text-align:center}
+.alt .sched-card{background:#fff}
+.sched-card .day{font-family:var(--serif);font-size:1.25rem;color:var(--ink)}
+.sched-card .time{font-size:1.6rem;font-weight:600;color:var(--gold);margin:.4rem 0}
+.sched-card .what{color:var(--text-soft);font-size:.95rem}
+.youth-badge{display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7A5B1E;background:#F0E6C8;border-radius:10px;padding:.15rem .55rem;vertical-align:middle;margin-left:.35rem}
+.fill{background:#FFF6DC;border:1px dashed var(--gold);border-radius:3px;padding:0 .3em;font-weight:600;color:#7A5B1E}
+
+/* ---------- address ---------- */
+.addr-box{text-align:center}
+.addr{font-family:var(--serif);font-size:1.35rem;color:var(--ink);margin-bottom:.4rem}
+.addr-note{color:var(--text-soft);margin-bottom:1.4rem}
+.btn{display:inline-block;font-weight:600;color:#fff;background:var(--ink);text-decoration:none;padding:.7rem 1.6rem;border-radius:4px}
+.btn:hover{background:#24365E}
+
+/* ---------- resources ---------- */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.res-card{background:#fff;border:1px solid #DDD5C2;border-radius:6px;padding:1.4rem;text-decoration:none;color:var(--text)}
+.res-card:hover{border-color:var(--gold)}
+.res-card .app-links{margin-top:.6rem;font-size:.85rem}
+.res-card .app-links a{color:var(--gold);font-weight:600;text-decoration:none}
+.res-card .app-links a:hover{text-decoration:underline}
+.res-card h3{font-family:var(--serif);font-weight:500;font-size:1.15rem;color:var(--ink);margin-bottom:.35rem}
+.res-card p{margin:0;color:var(--text-soft);font-size:.95rem}
+
+/* ---------- contact / footer ---------- */
+.contact-box{text-align:center}
+footer{background:var(--ink);color:#C9CFDD;text-align:center;padding:2.5rem 1.25rem;font-size:.9rem}
+footer .rule{width:72px;height:1px;background:var(--gold);margin:0 auto 1.4rem}
+footer a{color:#fff}
+
+@media (max-width:560px){
+  .brand{font-size:.9rem}
+  section{padding:3rem 1rem}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
